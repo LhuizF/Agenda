@@ -1,0 +1,45 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<main>
+    <div class="main-container">
+        <h1>Minha Agenda</h1>
+        <div class="login-container">
+
+            <form class="form-container" action="/login/register" method="POST">
+                <h2>Cadastre-se</h2>
+                <p>Ainda não tem conta? Cadastre-se agora.</p>
+
+                <div class="input-container">
+                    <label>Seu Email</label>
+                    <input type="email" placeholder="Login" name="email">
+                </div>
+                <div class="input-container">
+                    <label>Sua senha</label>
+                    <input type="password" placeholder="Senha" name="password">
+                </div>
+                <button class="main-btn">Criar Conta</button>
+
+            </form>
+    
+            <form class="form-container" action="/login/login" method="POST">
+                <h2>Login</h2>
+                <p>Efetue login agora e acesse seus contatos salvos.</p>
+
+                <div class="input-container">
+                    <label>Seu Email</label>
+                    <input type="email" placeholder="Login" name="email">
+                </div>
+                <div class="input-container">
+                    <label>Sua senha</label>
+                    <input type="password" placeholder="Senha" name="password">
+                </div>
+                <button class="main-btn">Criar Conta</button>
+                
+            </form>
+        </div>
+
+
+    </div>
+</main>
+    
+<%- include('includes/footer') %>
