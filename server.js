@@ -14,9 +14,9 @@ mongoose.connect(process.env.CONNECTSTRING ,{ useNewUrlParser: true,  useUnified
 
 const session = require('express-session'); //salva os cookie do navegador
 const MongoStore = require('connect-mongo'); //salvar as sessoes no BD
-const flash = require('connect-flash');//msg auto destrutivas 
-const helmet = require('helmet');// segurança
-const csrf = require('csurf')//segurança com tokens
+const flash = require('connect-flash');     //msg auto destrutivas 
+//const helmet = require('helmet');           // segurança
+const csrf = require('csurf')               //segurança com tokens
 
 //config da sessão 
 const sessionConfig = session({
@@ -25,7 +25,7 @@ const sessionConfig = session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 60,
+        maxAge: 1000 * 60 * 60, //1h
         httpOnly: true
     }
 })
@@ -36,7 +36,7 @@ const{ middlewareGlobal, checkCSRFErr, CSRFMiddleware } = require('./src/middlew
 
 app.use(sessionConfig);
 app.use(flash());
-app.use(helmet())
+//app.use(helmet())
 
 app.use(express.urlencoded({extended: true})); //permite postar formularios na aplicação
 app.use(express.json());

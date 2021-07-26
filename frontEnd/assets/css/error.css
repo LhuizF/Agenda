@@ -18,8 +18,15 @@
     color: #721C23;
     border: 1px solid #721C23;
     margin: 15px 0;
+    padding: 10px;
 }
 
-.alert-error p {
-    font-size: 18px;
+.alert-success{
+    text-align: center;
+    width: 90%;
+    background-color: #D3EDDA;
+    color: #79b689;
+    border: 1px solid #79b689;
+    margin: 15px 0;
+    padding: 10px;
 }

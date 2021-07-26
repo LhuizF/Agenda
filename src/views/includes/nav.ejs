@@ -1,7 +1,10 @@
 <nav>
     <div class="menu-nav">
         <a href="/"><i class="material-icons">home</i></a>
-
-        <a href="/login"><strong>Login</strong></a>
+        <% if(user){ %>
+            <a href="/login/logout"><strong>Sair</strong></a>
+            <% } else {%>
+                <a href="/login"><strong>Entrar</strong></a>
+                <% }%>
     </div>
 </nav>
