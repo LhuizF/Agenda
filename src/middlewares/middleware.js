@@ -10,9 +10,17 @@ exports.checkCSRFErr = (err, req, res, next) => {
         return res.render('error');
     }
     next()
-}
+};
 
 exports.CSRFMiddleware = (req, res, next) => {
     res.locals.csrfToken = req.csrfToken();
     next();
-}
+};
+
+exports.loginRequired = (req, res, next) =>{
+    if(!req.session.user) {
+        req.flash('errors', 'Você precisa fazer login.');
+        return req.session.save(() => res.redirect('/'));
+    }
+    next()
+};

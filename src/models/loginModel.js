@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const validator = require('validator')
 const bcryprjs = require('bcryptjs')
 
-
 const loginSchema = new mongoose.Schema({
     email: { type: String, required: true },
     password: { type: String, required: true }
@@ -27,7 +26,6 @@ class Login{
             return;
         }
     }
-
 
     async register() {
         this.valida();

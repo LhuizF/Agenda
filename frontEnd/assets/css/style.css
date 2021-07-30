@@ -72,6 +72,7 @@ nav{
     text-align: start;
 }
 
+
 th{
     background-color: #181818;    
 }
@@ -85,10 +86,11 @@ hr{
     width: 80px;
     background-color: #DBDBDB;
     border: none;
+    
 }
 
-
-.main-btn{
+.main-btn,
+.btn-menu button{
     background-color: transparent;
     color: #381b88;
     cursor: pointer;

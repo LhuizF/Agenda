@@ -5,6 +5,11 @@
         <h1>Agenda</h1>
         <p>Seus contatos estão abaixo.</p>
 
+        <%- include('includes/msg') %>
+        
+        <% if(user){ %>
+            <%- include('includes/btnMenu') %>
+            <% } %>
 
         <table class="table">
             
