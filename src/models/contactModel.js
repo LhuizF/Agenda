@@ -6,8 +6,9 @@ const contactSchema = new mongoose.Schema({
     lastName:{type: String, require: false, default: ''},
     email:{type: String, require: false, default: ''},
     telephone:{type: Number, require: false, default: ''},
-    createdDate:{type: Date, default: () => {
-        
+    createdDate:{type: String, default: () => {
+        const now = new Date
+        return now.toLocaleDateString() +' ' + now.toLocaleTimeString()
     }}
 });
 
@@ -31,7 +32,6 @@ class Contact {
     valida(){
         this.cleanUp()
 
-        //e-mail
         if(this.body.email && !validator.isEmail(this.body.email)){
             this.addError('E-mail inválido');
         }
@@ -39,6 +39,8 @@ class Contact {
         if(!this.body.name) this.addError('O campo nome não pode ser nulo.');
 
         if(!this.body.email && !this.body.telephone) this.addError('O campo Email ou Telefone deve ser preenchido')
+
+        //if(this.body.telephone === NaN) this.addError('O campo Telefone deve conter somente números')
     }
 
     cleanUp(){
@@ -59,6 +61,32 @@ class Contact {
     addError(msg){
         this.errors.push(msg)
     }
+
+    async edit(id) {
+        if(typeof id !== "string") return;
+        this.valida();
+
+        if(this.errors.length > 0) return;
+        this.contact = await contactModel.findByIdAndUpdate(id, this.body, {new: true})
+    }
+}
+
+Contact.searchId = async (id) => {
+    if(typeof id !== "string") return;
+    const contact = await contactModel.findById(id)
+    return contact;
+}
+
+Contact.searchContacts = async () => {
+    const contacts = await contactModel.find()
+    .sort({ criadoEm : -1 })
+    return contacts;
+}
+
+Contact.deleteId = async (id) =>{
+    if(typeof id !== "string") return;
+    const contact = await contactModel.findOneAndDelete({_id: id})
+    return contact;
 }
 
 module.exports = Contact;

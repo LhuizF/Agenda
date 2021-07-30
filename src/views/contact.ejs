@@ -3,31 +3,40 @@
 <main>
     <div class="main-container">
         <h1>Contato</h1>
-        <p>Adicionar novo contato.</p>
-
+        <%if(contact._id){ %>
+            <p>Editar contato.</p>
+        <% } else{ %>
+            <p>Adicionar novo contato.</p>
+        <% } %>
+        
         <%- include('includes/msg') %>
 
-        <form class="form-container" action="/contact/register" method="POST">
+        <%if(contact._id){ %>
+            <form class="form-container" action="/contact/edit/<%= contact._id %>" method="POST">
+        <% } else{ %>
+            <form class="form-container" action="/contact/register" method="POST">
+        <% } %>
+
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
             <div class="input-container">
                 <label>Nome</label>
-                <input type="text" placeholder="Nome" name="name" autocomplete="off">
+                <input value="<%= contact.name %>" type="text" placeholder="Nome" name="name" autocomplete="off">
             </div>
 
             <div class="input-container">
                 <label>Sobrenome</label>
-                <input type="text" placeholder="Sobrenome" name="lastName" autocomplete="off">
+                <input value="<%= contact.lastName %>" type="text" placeholder="Sobrenome" name="lastName" autocomplete="off">
             </div>
 
             <div class="input-container">
                 <label>Email</label>
-                <input type="email" placeholder="Email" name="email" autocomplete="off">
+                <input value="<%= contact.email %>" type="email" placeholder="Email" name="email" autocomplete="off">
             </div>
 
             <div class="input-container">
                 <label>Telefone</label>
-                <input type="tel" placeholder="Telefone" name="telephone" autocomplete="off">
+                <input value="<%= contact.telephone %>" type="tel" placeholder="Telefone" name="telephone" autocomplete="off">
             </div>
             <button class="main-btn">Salvar</button>
 

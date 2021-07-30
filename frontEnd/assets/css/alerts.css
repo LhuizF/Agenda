@@ -12,21 +12,21 @@
 }
 
 .alert-error{
-    text-align: center;
-    width: 90%;
     background-color: #f7707b;
     color: #721C23;
     border: 1px solid #721C23;
-    margin: 15px 0;
-    padding: 10px;
 }
 
 .alert-success{
-    text-align: center;
-    width: 90%;
     background-color: #D3EDDA;
     color: #79b689;
     border: 1px solid #79b689;
+}
+
+.alert-success,
+.alert-error{
+    text-align: center;
+    width: 60%;
     margin: 15px 0;
     padding: 10px;
 }

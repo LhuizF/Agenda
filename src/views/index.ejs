@@ -13,34 +13,33 @@
 
         <table class="table">
             
+            
             <tr>
                 <th>Nome</th>
                 <th>Sobrenome</th>
-                <th>Telefone</th>
                 <th>E-mail</th>
+                <th>Telefone</th>
                 <th>Editar</th>
             </tr>
 
-            <tr>
-                <td>luiz</td>
-                <td>Henriqfgfdge</td>
-                <td>24992739477</td>
-                <td>Luiz@gmais.com</td>
-            </tr>
+            <% contacts.forEach(contact => { %> 
 
-            <tr>
-                <td>lui333z</td>
-                <td>Henriqtetue</td>
-                <td>24992gerg739477</td>
-                <td>Luiz@gmais.com</td>
-            </tr>
+                <tr>
+                    <td><%= contact.name %></td>
+                    <td><%= contact.lastName %></td>
+                    <td><%= contact.email %></td>
+                    <td><%= contact.telephone %></td>
+                    <td><div class="table-btn">
+                        <a href="/contact/<%=contact._id %>"><i class="material-icons">edit</i></a>
+                        <a href="/contact/delete/<%=contact._id %>"><i class="material-icons">delete</i></a>
+                    </div></td>
 
-            <tr>
-                <td>luiz</td>
-                <td>He5555nrique</td>
-                <td>24992739477</td>
-                <td>Luiz@g44mais.com</td>
-            </tr>
+                </tr>
+
+            <% }) %>
+            
+
+            
         </table>
 
     </div>

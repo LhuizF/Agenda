@@ -31,6 +31,10 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
+a{
+    text-decoration: none;
+    color: #fff;
+}
 
 .menu-nav a{
     color: #202020;

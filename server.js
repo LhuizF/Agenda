@@ -5,7 +5,7 @@ const app = express();
 
 //banco de dados
 const mongoose = require('mongoose');
-mongoose.connect(process.env.CONNECTSTRING ,{ useNewUrlParser: true,  useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTSTRING ,{ useNewUrlParser: true,  useUnifiedTopology: true, useFindAndModify: false })
     .then(() =>{
         console.log('conectado com o BD');
         app.emit('okay');

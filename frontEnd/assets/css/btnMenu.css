@@ -16,3 +16,13 @@
     border-radius: 15px;
     text-decoration: none;
 }
+
+.table-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-btn a:hover {
+    color: #181818;
+}
