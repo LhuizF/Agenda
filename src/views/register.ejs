@@ -2,38 +2,46 @@
 <%- include('includes/nav') %>
 <main>
     
-    <div class="login-register-container">
         
+
+        
+
         <div class="login-container">
             <h1>Minha Agenda</h1>
             <%- include('includes/msg') %>
 
-            <!-- Login -->
-            <form class="form-container" action="/login/login" method="POST">
+            <!-- Register -->
+            <form class="form-container" action="/register/register" method="POST">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <h2>Login</h2>
-                <p>Efetue login agora e acesse seus contatos salvos.</p>
+                <h2>Cadastre-se</h2>
+                <p>Ainda não tem conta? Cadastre-se agora.</p>
+
+                <div class="input-container">
+                    <label>Usuário</label>
+                    <input type="text" placeholder="Usuário" name="user" autocomplete="off">
+                </div>
 
                 <div class="input-container">
                     <label>Seu Email</label>
                     <input type="email" placeholder="Email" name="email">
                 </div>
+
                 <div class="input-container">
                     <label>Sua senha</label>
                     <input type="password" placeholder="Senha" name="password">
                 </div>
-                <button class="main-btn">Entrar</button>
-                
+
+                <div class="input-container">
+                    <label>Confirmar senha</label>
+                    <input type="password" placeholder="Confirmar Senha" name="confirmPassword">
+                </div>
+                <button class="main-btn">Criar Conta</button>
+
             </form>
+
         </div>
 
-        <div class="login-container">
-            <h2>Não tem conta? <a href="/register">Cadastre-se aqui!</a></h2>
-        </div>
-        
-    </div>
-        
-
+    
 </main>
     
 <%- include('includes/footer') %>

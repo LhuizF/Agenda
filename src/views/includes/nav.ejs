@@ -1,10 +1,14 @@
 <nav>
     <div class="menu-nav">
         <a href="/"><i class="material-icons">home</i></a>
-        <% if(user){ %>
-            <a href="/login/logout"><strong>Sair</strong></a>
-            <% } else {%>
-                <a href="/login"><strong>Entrar</strong></a>
+        <div>
+            <% if(user){ %>
+                <a href="#" style="margin-right: 10px;"><strong><%= user.user %></strong></a>
+                <a href="/login/logout"><strong>Sair</strong></a>
+                <% } else {%>
+                    <a href="/login"><strong>Login</strong></a>
                 <% }%>
+        </div>
+        
     </div>
 </nav>
