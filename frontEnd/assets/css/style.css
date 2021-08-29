@@ -36,17 +36,20 @@ nav{
     align-items: center;
     justify-content: space-between;
 }
+
 a{
     text-decoration: none;
     color: #fff;
 }
 
+.login-complet a,
 .menu-nav a{
     color: #202020;
     text-decoration: none;
     font-size: 20px;
 }
 
+.login-complet a:hover,
 .menu-nav a:hover{
     color: #d8d8d8;
 }

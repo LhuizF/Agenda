@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
 }
-
+.register-container,
 .login-container{
     display: flex;
     justify-content: center;
@@ -49,4 +49,12 @@
     background-color: #f1f1f1;
     height: 30px;
     border: 2px solid var(--second-color);
+}
+
+.input-container p {
+    margin: 2px;
+    color: #af1622;
+    background-color: #f7707b;
+    padding: 5px 10px;
+    width: fit-content;
 }

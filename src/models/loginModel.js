@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('validator')
+
 const bcryprjs = require('bcryptjs')
 const registerModel = require('./registerModel')
 

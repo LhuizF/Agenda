@@ -34,9 +34,9 @@ class Register{
         this.cleanUp()
 
         //usuário
-        if(this.body.user.length < 3 || !this.body.user.match(/[a-zA-Z0-9]+/g)){
+        if(this.body.user.length < 3 || this.body.user.length > 12 || !this.body.user.match(/[a-zA-Z0-9]+/g)){
             this.addError('Nome de usuário inválido');
-            console.log(this.aa)
+            
         }
 
         //e-mail
@@ -45,8 +45,8 @@ class Register{
         }
 
         //senha
-        if(this.body.password.length < 3 || this.body.password.length > 20){
-            this.addError('A senha precisa ter entre 5 a 20 caracteres');
+        if(this.body.password.length < 6 || this.body.password.length > 20){
+            this.addError('A senha precisa ter entre 6 a 20 caracteres');
         }
 
         if(this.body.password !== this.body.confirmPassword){

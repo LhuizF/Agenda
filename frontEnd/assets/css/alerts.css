@@ -30,3 +30,16 @@
     margin: 15px 0;
     padding: 10px;
 }
+
+.login-complet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.login-complet i{
+    background-color: var(--main-color);
+    padding: 5px;
+    border-radius: 5px;
+}
